@@ -188,7 +188,7 @@ void printAllTypes(const Device sales[], int salesCount) {
 
 double calculateTotalSales(const Device sales[], int salesCount, time_t startDate, time_t endDate) {
     double totalSales = 0.0;
-    for (int i = 0; i < salesCount; ++i) {
+    for (int i = 0; i < salesCount; i++) {
         if (sales[i].saleDate >= startDate && sales[i].saleDate <= endDate) {
             totalSales += sales[i].price;
         }
@@ -211,7 +211,7 @@ int main() {
     int salesCount = 3; 
 
     time_t currentDate = time(nullptr);
-    time_t startDate = currentDate - 365 * 24 * 60 * 60; // текущая дата минус 1 год в секундах
+    time_t startDate = currentDate - 365 * 24 * 60 * 60; 
     time_t endDate = currentDate;
 
     cout << "Number of sales for CPU in the last year: " << countSalesByName(sales, salesCount, "Intel Core i7", startDate, endDate) << "\n";
@@ -223,7 +223,7 @@ int main() {
     cout << "Total sales amount for the last year: $" << calculateTotalSales(sales, salesCount, startDate, endDate) << "\n";
 
     cout << "\nWarranty Periods:\n";
-    for (int i = 0; i < salesCount; ++i) {
+    for (int i = 0; i < salesCount; i++) {
         printWarrantyPeriod(sales[i]);
     }
 
