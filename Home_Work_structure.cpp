@@ -186,7 +186,7 @@ void printAllTypes(const Device sales[], int salesCount) {
     }
 }
 
-double calculateTotalSales(const Device sales[], int salesCount, time_t startDate, time_t endDate) {
+double calcTotalSales(const Device sales[], int salesCount, time_t startDate, time_t endDate) {
     double totalSales = 0.0;
     for (int i = 0; i < salesCount; i++) {
         if (sales[i].saleDate >= startDate && sales[i].saleDate <= endDate) {
@@ -220,7 +220,7 @@ int main() {
 
     printAllTypes(sales, salesCount);
 
-    cout << "Total sales amount for the last year: $" << calculateTotalSales(sales, salesCount, startDate, endDate) << "\n";
+    cout << "Total sales amount for the last year: $" << calcTotalSales(sales, salesCount, startDate, endDate) << "\n";
 
     cout << "\nWarranty Periods:\n";
     for (int i = 0; i < salesCount; i++) {
